@@ -956,12 +956,12 @@ console.log('%c © 2025 Samuel Owino | Luminary Labs ', 'color: #8B5CF6; font-si
 
   // Sources to try in order
   const sources = [
+    'samuel.jpeg',
+    'Samuel.jpeg',
     'samuel.jpg',
     'Samuel.jpg',
     'photo.jpg',
     'profile.jpg',
-    'samuel.jpeg',
-    'profile.jpeg',
   ];
 
   let tried = 0;
