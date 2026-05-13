@@ -932,3 +932,71 @@ window.addEventListener('load', () => {
 console.log('%c Samuel Owino Portfolio ', 'background: linear-gradient(135deg, #00D4FF, #8B5CF6); color: white; font-size: 16px; font-weight: bold; padding: 8px 16px; border-radius: 8px;');
 console.log('%c Built with pure HTML, CSS & JavaScript — No Libraries! ', 'color: #06FFA5; font-size: 12px;');
 console.log('%c © 2025 Samuel Owino | Luminary Labs ', 'color: #8B5CF6; font-size: 11px;');
+
+
+/* ============================================
+   DYNAMIC COPYRIGHT YEAR
+   Starts from 2026, auto-updates every year
+   ============================================ */
+(function initDynamicYear() {
+  const el = document.getElementById('footerYear');
+  if (!el) return;
+  const startYear = 2026;
+  const currentYear = new Date().getFullYear();
+  el.textContent = currentYear > startYear ? startYear + '–' + currentYear : String(startYear);
+})();
+
+/* ============================================
+   PROFILE PHOTO — SMART LOADER
+   Falls back gracefully if image not found
+   ============================================ */
+(function initProfilePhoto() {
+  const img = document.getElementById('profilePhoto');
+  if (!img) return;
+
+  // Try loading the photo from the repo
+  const sources = [
+    'samuel.jpg',
+    'samuel.jpeg',
+    'samuel.png',
+    'photo.jpg',
+    'profile.jpg'
+  ];
+
+  let tried = 0;
+
+  function tryNext() {
+    if (tried >= sources.length) {
+      // All sources failed — show fallback styling
+      const frame = img.parentElement;
+      if (frame) frame.classList.add('photo-fallback');
+      img.style.display = 'none';
+      return;
+    }
+    img.src = sources[tried++];
+  }
+
+  img.addEventListener('error', tryNext);
+  img.addEventListener('load', () => {
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.8s ease';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        img.style.opacity = '1';
+      });
+    });
+  });
+
+  tryNext();
+})();
+
+/* ============================================
+   HERO PHOTO IN VISUAL SPHERE (optional swap)
+   Replace the sphere core with photo on mobile
+   ============================================ */
+(function initHeroPhotoReplace() {
+  // On smaller screens, show photo in the hero visual instead of just sphere
+  const sphereCore = document.querySelector('.sphere-core');
+  if (!sphereCore) return;
+  // Keep sphere as is — photo is in about section
+})();

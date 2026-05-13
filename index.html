@@ -69,6 +69,11 @@
           <span class="title-line gradient-text" id="titleLine2">Digital Future</span>
         </h1>
         <p class="hero-subtitle">Through Code, Data &amp; Innovation.</p>
+        <div class="hero-slogan">
+          <span class="slogan-icon">⚡</span>
+          <span class="slogan-text">" Better Tech &nbsp;·&nbsp; Better World "</span>
+          <span class="slogan-icon">⚡</span>
+        </div>
         <div class="hero-roles">
           <span class="role-prefix">I am a </span>
           <span class="typing-text" id="typingText"></span>
@@ -89,20 +94,23 @@
           </a>
         </div>
         <div class="hero-socials">
-          <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+          <a href="https://github.com/Sael-Git" target="_blank" class="social-icon" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/Samuelowino" target="_blank" class="social-icon" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="mailto:samuel@example.com" class="social-icon" aria-label="Email">
+          <a href="mailto:Owinosamuel119@gmail.com" class="social-icon" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://wa.me/254700000000" target="_blank" class="social-icon" aria-label="WhatsApp">
+          <a href="https://wa.me/254114175425" target="_blank" class="social-icon" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter/X">
+          <a href="https://x.com/Sael254" target="_blank" class="social-icon" aria-label="Twitter/X">
             <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/samuel_sael1?igsh=MTh0anFvM20zdWg2dw==" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
           </a>
         </div>
       </div>
@@ -145,9 +153,29 @@
         <div class="about-image-col reveal">
           <div class="about-image-wrapper">
             <div class="about-image-placeholder">
-              <div class="image-initials">SO</div>
-              <div class="image-ring ring-outer"></div>
-              <div class="image-ring ring-inner"></div>
+              <!-- Real Photo — cinematic frame -->
+              <div class="profile-photo-frame" id="profilePhotoFrame">
+                <div class="photo-hex-ring hex-ring-1"></div>
+                <div class="photo-hex-ring hex-ring-2"></div>
+                <div class="photo-hex-ring hex-ring-3"></div>
+                <div class="photo-scan-line"></div>
+                <!-- Photo loads from repo root; fallback shows styled initials -->
+                <img
+                  src="samuel.jpg"
+                  alt="Samuel Owino — Full Stack Engineer & Tech Founder"
+                  class="profile-photo"
+                  id="profilePhoto"
+                  onerror="document.getElementById('profilePhotoFrame').classList.add('photo-fallback'); this.style.display='none';"
+                />
+                <div class="photo-overlay-gradient"></div>
+                <div class="photo-corner photo-corner-tl"></div>
+                <div class="photo-corner photo-corner-tr"></div>
+                <div class="photo-corner photo-corner-bl"></div>
+                <div class="photo-corner photo-corner-br"></div>
+                <div class="photo-data-tag">
+                  <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya 🇰🇪
+                </div>
+              </div>
             </div>
             <div class="about-image-badge">
               <i class="fas fa-code"></i>
@@ -158,20 +186,22 @@
         <div class="about-content-col reveal">
           <h3 class="about-heading">Young African Tech Visionary</h3>
           <p class="about-bio">
-            I'm <strong>Samuel Owino</strong> — a passionate Full Stack Software Engineer, Data Analyst, Statistician, and Tech Entrepreneur from Africa. I blend cutting-edge technology with data-driven insights to build solutions that matter. My journey started with a deep curiosity for how systems work and evolved into a mission to shape Africa's digital landscape through innovation, code, and entrepreneurship.
+            I'm <strong>Samuel Owino</strong> — a passionate Full Stack Software Engineer, Mathematician, Statistician, Data Analyst, and Tech Entrepreneur from Kenya 🇰🇪. I fuse deep mathematical thinking with cutting-edge software engineering to architect solutions that are not just functional — but transformative.
           </p>
           <p class="about-bio">
-            From building scalable web applications to deriving actionable insights from complex datasets, I thrive at the intersection of technology and impact. As the Founder of <strong>Luminary Labs</strong>, I'm on a mission to create the continent's most transformative tech ecosystem.
+            With a strong foundation in <strong>Applied Mathematics</strong> and Statistics, I bring rare analytical precision to every line of code I write. From probability theory to predictive modelling, I turn complex data into intelligent, actionable systems. As <strong>Co-Founder & Tech Lead at Luminary Labs</strong>, and Founder of <strong>Jackie Peanuts</strong> and <strong>FinQuest</strong>, I'm building Africa's digital future — one breakthrough at a time.
           </p>
           <div class="about-tags">
             <span class="tag">Problem Solver</span>
-            <span class="tag">Innovator</span>
+            <span class="tag">Mathematician</span>
+            <span class="tag">Applied Maths</span>
             <span class="tag">Data Enthusiast</span>
             <span class="tag">Open Source</span>
             <span class="tag">Tech Entrepreneur</span>
             <span class="tag">Africa-focused</span>
             <span class="tag">Remote-ready</span>
             <span class="tag">Agile</span>
+            <span class="tag">FinTech Builder</span>
           </div>
           <a href="#" class="btn btn-primary mt-20">
             <i class="fas fa-file-download"></i> Download CV
@@ -453,15 +483,15 @@
           </div>
           <div class="project-body">
             <h3 class="project-title">Luminary Labs</h3>
-            <p class="project-desc">A futuristic innovation and technology ecosystem empowering Africa's next generation of builders.</p>
+            <p class="project-desc">A futuristic tech innovation ecosystem empowering Africa's next-gen builders. Role: <strong>Co-Founder &amp; Tech Lead</strong> — architecting the entire digital infrastructure.</p>
             <div class="project-tags">
               <span class="ptag">React</span>
               <span class="ptag">Node.js</span>
               <span class="ptag">AI</span>
             </div>
             <div class="project-links">
-              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
-              <a href="#" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://luminarylabs.co.ke" target="_blank" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="https://github.com/Sael-Git" target="_blank" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
@@ -472,15 +502,15 @@
           </div>
           <div class="project-body">
             <h3 class="project-title">St. Jairus Community Hospital</h3>
-            <p class="project-desc">Professional healthcare management platform streamlining patient records, appointments, and billing.</p>
+            <p class="project-desc">Professional healthcare management platform streamlining patient records, appointments, and billing. Role: <strong>Project Lead</strong> — end-to-end system design &amp; delivery.</p>
             <div class="project-tags">
               <span class="ptag">Next.js</span>
               <span class="ptag">MySQL</span>
               <span class="ptag">TypeScript</span>
             </div>
             <div class="project-links">
-              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
-              <a href="#" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://stjairushospital.co.ke" target="_blank" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="https://github.com/Sael-Git" target="_blank" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
@@ -490,8 +520,8 @@
             <div class="project-status live">Live</div>
           </div>
           <div class="project-body">
-            <h3 class="project-title">Jackie Peanuts</h3>
-            <p class="project-desc">Modern digital brand platform for a premium peanut business with e-commerce and branding showcase.</p>
+            <h3 class="project-title">Jackie Peanuts 🥜</h3>
+            <p class="project-desc">Kenya's fast-selling premium peanut brand. <strong>Founded &amp; built</strong> the entire digital presence — brand identity, e-commerce store, and marketing platform from scratch.</p>
             <div class="project-tags">
               <span class="ptag">React</span>
               <span class="ptag">E-commerce</span>
@@ -499,7 +529,7 @@
             </div>
             <div class="project-links">
               <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
-              <a href="#" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/Sael-Git" target="_blank" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
@@ -522,39 +552,43 @@
             </div>
           </div>
         </div>
-        <div class="project-card glass reveal tilt-card coming-soon-card" data-category="web business">
-          <div class="project-header" style="background: linear-gradient(135deg, #00D4FF11, #FFD70011);">
-            <div class="project-header-icon"><i class="fas fa-credit-card"></i></div>
-            <div class="project-status soon">Coming Soon</div>
+        <div class="project-card glass reveal tilt-card" data-category="web business">
+          <div class="project-header" style="background: linear-gradient(135deg, #00D4FF22, #FFD70022);">
+            <div class="project-header-icon"><i class="fas fa-gamepad"></i></div>
+            <div class="project-status live">Live</div>
           </div>
           <div class="project-body">
-            <h3 class="project-title">FinTech SaaS Platform</h3>
-            <p class="project-desc">Next-generation financial technology platform enabling seamless payments, lending, and financial analytics.</p>
+            <h3 class="project-title">FinQuest 🎮</h3>
+            <p class="project-desc"><strong>Founder.</strong> A gamified web app teaching financial literacy to kids aged 6–17 across Africa. Learn budgeting, saving &amp; investing — through play.</p>
             <div class="project-tags">
               <span class="ptag">Next.js</span>
-              <span class="ptag">PostgreSQL</span>
-              <span class="ptag">Stripe</span>
+              <span class="ptag">Gamification</span>
+              <span class="ptag">FinLit</span>
+              <span class="ptag">Kids</span>
             </div>
             <div class="project-links">
-              <a href="#" class="plink plink-disabled"><i class="fas fa-lock"></i> In Development</a>
+              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="https://github.com/Sael-Git" target="_blank" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
-        <div class="project-card glass reveal tilt-card coming-soon-card" data-category="data">
-          <div class="project-header" style="background: linear-gradient(135deg, #06FFA511, #8B5CF611);">
-            <div class="project-header-icon"><i class="fas fa-cogs"></i></div>
-            <div class="project-status soon">Coming Soon</div>
+        <div class="project-card glass reveal tilt-card" data-category="data web">
+          <div class="project-header" style="background: linear-gradient(135deg, #06FFA522, #00D4FF22);">
+            <div class="project-header-icon"><i class="fas fa-leaf"></i></div>
+            <div class="project-status live">Live</div>
           </div>
           <div class="project-body">
-            <h3 class="project-title">Smart Data Pipeline</h3>
-            <p class="project-desc">Automated ETL pipeline for large-scale data processing, transformation, and visualization with R and Python.</p>
+            <h3 class="project-title">GreenPulse 🌱</h3>
+            <p class="project-desc">An environmental tech platform monitoring sustainability metrics, carbon footprints, and green innovation initiatives across Africa.</p>
             <div class="project-tags">
+              <span class="ptag">React</span>
               <span class="ptag">Python</span>
-              <span class="ptag">R</span>
-              <span class="ptag">Automation</span>
+              <span class="ptag">Data</span>
+              <span class="ptag">GreenTech</span>
             </div>
             <div class="project-links">
-              <a href="#" class="plink plink-disabled"><i class="fas fa-lock"></i> In Development</a>
+              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="https://github.com/Sael-Git" target="_blank" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
@@ -862,14 +896,14 @@
             <div class="contact-icon" style="color: #00D4FF"><i class="fas fa-envelope"></i></div>
             <div class="contact-details">
               <div class="contact-label">Email</div>
-              <a href="mailto:samuel@luminrylabs.com" class="contact-value">samuel@luminarylabs.com</a>
+              <a href="mailto:Owinosamuel119@gmail.com" class="contact-value">Owinosamuel119@gmail.com</a>
             </div>
           </div>
           <div class="contact-card glass">
             <div class="contact-icon" style="color: #06FFA5"><i class="fab fa-whatsapp"></i></div>
             <div class="contact-details">
               <div class="contact-label">WhatsApp</div>
-              <a href="https://wa.me/254700000000" class="contact-value">+254 700 000 000</a>
+              <a href="https://wa.me/254114175425" target="_blank" class="contact-value">+254 114 175 425</a>
             </div>
           </div>
           <div class="contact-card glass">
@@ -880,10 +914,11 @@
             </div>
           </div>
           <div class="contact-socials">
-            <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://wa.me/254700000000" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://github.com/Sael-Git" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/Samuelowino" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/Sael254" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/254114175425" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/samuel_sael1?igsh=MTh0anFvM20zdWg2dw==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="contact-form-wrapper reveal">
@@ -924,12 +959,16 @@
         <div class="footer-brand">
           <div class="footer-logo">SO</div>
           <p class="footer-tagline">Code the future. Build the impossible.</p>
+          <div class="footer-slogan-strip">
+            <span class="footer-slogan-text">⚡ Better Tech &nbsp;·&nbsp; Better World ⚡</span>
+          </div>
           <div class="footer-socials">
-            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:samuel@luminarylabs.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://wa.me/254700000000" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/Sael-Git" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/Samuelowino" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:Owinosamuel119@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/254114175425" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://x.com/Sael254" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/samuel_sael1?igsh=MTh0anFvM20zdWg2dw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="footer-links-col">
@@ -962,7 +1001,7 @@
       </div>
       <div class="footer-bottom">
         <p class="footer-quote">"Code the future. Build the impossible."</p>
-        <p class="footer-copy">&copy; 2025 Samuel Owino. All Rights Reserved.</p>
+        <p class="footer-copy">&copy; <span id="footerYear">2026</span> Samuel Owino. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
