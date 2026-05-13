@@ -954,21 +954,22 @@ console.log('%c © 2025 Samuel Owino | Luminary Labs ', 'color: #8B5CF6; font-si
   const img = document.getElementById('profilePhoto');
   if (!img) return;
 
-  // Try loading the photo from the repo
+  // Sources to try in order
   const sources = [
     'samuel.jpg',
-    'samuel.jpeg',
-    'samuel.png',
+    'Samuel.jpg',
     'photo.jpg',
-    'profile.jpg'
+    'profile.jpg',
+    'samuel.jpeg',
+    'profile.jpeg',
   ];
 
   let tried = 0;
 
   function tryNext() {
     if (tried >= sources.length) {
-      // All sources failed — show fallback styling
-      const frame = img.parentElement;
+      // All failed — show the beautiful "SO" initials fallback
+      const frame = document.getElementById('profilePhotoFrame');
       if (frame) frame.classList.add('photo-fallback');
       img.style.display = 'none';
       return;
@@ -977,7 +978,9 @@ console.log('%c © 2025 Samuel Owino | Luminary Labs ', 'color: #8B5CF6; font-si
   }
 
   img.addEventListener('error', tryNext);
+
   img.addEventListener('load', () => {
+    // Smooth fade-in when photo loads
     img.style.opacity = '0';
     img.style.transition = 'opacity 0.8s ease';
     requestAnimationFrame(() => {
@@ -985,8 +988,13 @@ console.log('%c © 2025 Samuel Owino | Luminary Labs ', 'color: #8B5CF6; font-si
         img.style.opacity = '1';
       });
     });
+    // Remove fallback class if it was set
+    const frame = document.getElementById('profilePhotoFrame');
+    if (frame) frame.classList.remove('photo-fallback');
+    img.style.display = 'block';
   });
 
+  // Start loading
   tryNext();
 })();
 

@@ -2388,6 +2388,23 @@ button {
   -webkit-text-fill-color: transparent;
   border-radius: 50%;
   z-index: 2;
+  text-shadow: none;
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
+  animation: fallbackGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes fallbackGlow {
+  from { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.4)); }
+  to   { filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.8)); }
+}
+
+/* When fallback is active, add a gradient background */
+.profile-photo-frame.photo-fallback {
+  background: radial-gradient(circle at 40% 35%,
+    rgba(0, 212, 255, 0.15),
+    rgba(139, 92, 246, 0.1) 50%,
+    rgba(6, 255, 165, 0.05) 100%
+  );
 }
 
 /* Cinematic overlay gradient */
