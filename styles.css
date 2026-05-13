@@ -2539,3 +2539,204 @@ button {
   opacity: 0.75;
   text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
+
+
+
+/* ============================================
+   PHOTO FRAME — CLEANED UP
+   Location tag & badge now sit cleanly below
+   ============================================ */
+
+/* Remove the old in-frame tag */
+.photo-data-tag { display: none; }
+
+/* Wrapper now has more vertical space for items below */
+.about-image-wrapper {
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Location tag below the spinning frame */
+.photo-location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan-green);
+  background: rgba(6, 255, 165, 0.08);
+  border: 1px solid rgba(6, 255, 165, 0.3);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-top: 18px; /* space below the outer spinning ring */
+}
+
+/* Badge sits below location tag — no longer absolute-positioned */
+.about-image-badge {
+  position: static;
+  margin-top: 8px;
+  align-self: center;
+}
+
+/* Keep the outer ring from clipping into badge area */
+.about-image-placeholder {
+  margin-bottom: 4px;
+}
+
+/* ============================================
+   SKILL CATEGORIES — ACCORDION
+   ============================================ */
+.skill-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.skill-category {
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden;
+  transition: box-shadow var(--transition-med);
+}
+
+.skill-category:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(0,212,255,0.08);
+}
+
+/* Header button */
+.skill-cat-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 28px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer !important;
+  text-align: left;
+  transition: background var(--transition-fast);
+  border-radius: var(--radius-lg);
+}
+
+.skill-cat-header:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.skill-cat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--electric-blue), var(--neon-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0,212,255,0.25);
+}
+
+.skill-cat-title {
+  flex: 1;
+}
+
+.skill-cat-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.05);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.skill-cat-chevron {
+  color: var(--electric-blue);
+  font-size: 0.85rem;
+  transition: transform var(--transition-med);
+  flex-shrink: 0;
+}
+
+.skill-cat-header[aria-expanded="true"] .skill-cat-chevron {
+  transform: rotate(180deg);
+}
+
+/* Body — collapsed by default */
+.skill-cat-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              padding var(--transition-med);
+  padding: 0 20px;
+}
+
+.skill-cat-body.open {
+  max-height: 600px;
+  padding: 0 20px 20px;
+}
+
+/* Skills grid inside each accordion */
+.skill-cat-body .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+  margin-top: 4px;
+}
+
+/* Smaller cards inside accordion */
+.skill-cat-body .skill-card {
+  padding: 18px 14px;
+  border-radius: var(--radius-md);
+}
+
+.skill-cat-body .skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(0,212,255,0.12);
+}
+
+/* ============================================
+   EXPERIENCE — ONGOING BADGE
+   ============================================ */
+.tl-badge-ongoing {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan-green);
+  background: rgba(6, 255, 165, 0.12);
+  border: 1px solid rgba(6, 255, 165, 0.35);
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  margin-left: 8px;
+  vertical-align: middle;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .skill-cat-header {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+
+  .skill-cat-body .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photo-location-tag {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-cat-body .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

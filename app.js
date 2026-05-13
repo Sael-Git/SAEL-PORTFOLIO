@@ -635,7 +635,7 @@ window.addEventListener('load', () => {
 })();
 
 /* ============================================
-   CONTACT FORM HANDLER
+   CONTACT FORM HANDLER — Formspree (real email)
    ============================================ */
 (function initContactForm() {
   const form    = document.getElementById('contactForm');
@@ -643,30 +643,55 @@ window.addEventListener('load', () => {
 
   if (!form || !sendBtn) return;
 
-  form.addEventListener('submit', (e) => {
+  // Mirror email to hidden _replyto field so replies go to the sender
+  const emailInput = document.getElementById('contactEmail');
+  const replyTo    = document.getElementById('replyToField');
+  if (emailInput && replyTo) {
+    emailInput.addEventListener('input', () => {
+      replyTo.value = emailInput.value;
+    });
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const btnText    = sendBtn.querySelector('.btn-text');
     const btnSuccess = sendBtn.querySelector('.btn-success');
 
-    // Simulate sending
-    sendBtn.disabled = true;
+    sendBtn.disabled      = true;
     sendBtn.style.opacity = '0.7';
-    sendBtn.style.cursor  = 'not-allowed';
 
-    if (btnText) btnText.style.display = 'none';
-    if (btnSuccess) btnSuccess.style.display = 'flex';
-    sendBtn.classList.add('success');
+    try {
+      const data = new FormData(form);
+      const res  = await fetch(form.action, {
+        method:  'POST',
+        body:    data,
+        headers: { 'Accept': 'application/json' }
+      });
 
-    setTimeout(() => {
-      form.reset();
-      if (btnText) btnText.style.display = 'flex';
-      if (btnSuccess) btnSuccess.style.display = 'none';
-      sendBtn.classList.remove('success');
-      sendBtn.disabled     = false;
+      if (res.ok) {
+        // Success
+        if (btnText)    btnText.style.display    = 'none';
+        if (btnSuccess) btnSuccess.style.display = 'flex';
+        sendBtn.classList.add('success');
+        showToast('✅ Message sent! Samuel will reply shortly.');
+        form.reset();
+
+        setTimeout(() => {
+          if (btnText)    btnText.style.display    = 'flex';
+          if (btnSuccess) btnSuccess.style.display = 'none';
+          sendBtn.classList.remove('success');
+          sendBtn.disabled      = false;
+          sendBtn.style.opacity = '';
+        }, 4000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch {
+      showToast('⚠️ Could not send. Please email Owinosamuel119@gmail.com directly.');
+      sendBtn.disabled      = false;
       sendBtn.style.opacity = '';
-      sendBtn.style.cursor  = '';
-    }, 3500);
+    }
   });
 })();
 
@@ -757,25 +782,53 @@ window.addEventListener('load', () => {
 })();
 
 /* ============================================
-   DOWNLOAD RESUME (placeholder)
+   SKILL CATEGORY ACCORDION
    ============================================ */
-(function initResumeDownload() {
-  const btn = document.getElementById('downloadResume');
-  if (!btn) return;
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Placeholder: show a toast-like notification
-    showToast('Resume download coming soon!');
+(function initSkillAccordion() {
+  const headers = document.querySelectorAll('.skill-cat-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const body    = header.nextElementSibling;
+      const isOpen  = header.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      headers.forEach(h => {
+        h.setAttribute('aria-expanded', 'false');
+        h.nextElementSibling.classList.remove('open');
+      });
+
+      // Open clicked (toggle)
+      if (!isOpen) {
+        header.setAttribute('aria-expanded', 'true');
+        body.classList.add('open');
+        // Trigger progress ring animation for newly revealed cards
+        body.querySelectorAll('.progress-fill').forEach(fill => {
+          const circ = 2 * Math.PI * 32;
+          const pct  = parseFloat(fill.getAttribute('data-percent')) || 0;
+          fill.style.strokeDasharray  = circ;
+          fill.style.strokeDashoffset = circ;
+          fill.style.stroke = 'url(#progressGradient)';
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            fill.style.strokeDashoffset = circ - (pct / 100) * circ;
+          }));
+        });
+      }
+    });
   });
 
-  document.querySelectorAll('.btn').forEach(btn => {
-    if (btn.textContent.trim().includes('Download CV')) {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showToast('CV download coming soon!');
-      });
-    }
-  });
+  // Animate the first (open) category on page load
+  const firstBody = document.querySelector('.skill-cat-body.open');
+  if (firstBody) {
+    firstBody.querySelectorAll('.progress-fill').forEach(fill => {
+      const circ = 2 * Math.PI * 32;
+      const pct  = parseFloat(fill.getAttribute('data-percent')) || 0;
+      fill.style.strokeDasharray  = circ;
+      fill.style.stroke = 'url(#progressGradient)';
+      setTimeout(() => {
+        fill.style.strokeDashoffset = circ - (pct / 100) * circ;
+      }, 800);
+    });
+  }
 })();
 
 /* ============================================
