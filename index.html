@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel Owino | Full Stack Engineer &amp; Tech Founder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <span class="logo-s">S</span><span class="logo-o">O</span>
+      </div>
+      <div class="loading-text" id="loadingText">Initializing Samuel's Universe...</div>
+      <div class="loading-bar-container">
+        <div class="loading-bar" id="loadingBar"></div>
+      </div>
+      <div class="loading-percentage" id="loadingPercentage">0%</div>
+    </div>
+    <div class="loading-particles" id="loadingParticles"></div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-glow">SO</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#data" class="nav-link">Data</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-text-block">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for Opportunities
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line" id="titleLine1">Building Africa's</span>
+          <span class="title-line gradient-text" id="titleLine2">Digital Future</span>
+        </h1>
+        <p class="hero-subtitle">Through Code, Data &amp; Innovation.</p>
+        <div class="hero-roles">
+          <span class="role-prefix">I am a </span>
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-description">
+          Full Stack Software Engineer &bull; Statistician &bull; Data Analyst &bull; Founder
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> View Projects
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-paper-plane"></i> Contact Me
+          </a>
+          <a href="#" class="btn btn-outline" id="downloadResume">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:samuel@example.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/254700000000" target="_blank" class="social-icon" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter/X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="sphere-container">
+          <div class="sphere">
+            <div class="sphere-ring ring-1"></div>
+            <div class="sphere-ring ring-2"></div>
+            <div class="sphere-ring ring-3"></div>
+            <div class="sphere-core"></div>
+            <div class="sphere-glow"></div>
+          </div>
+        </div>
+        <div class="floating-icons">
+          <span class="float-icon icon-1">&lt;/&gt;</span>
+          <span class="float-icon icon-2">{}</span>
+          <span class="float-icon icon-3">[]</span>
+          <span class="float-icon icon-4">#</span>
+          <span class="float-icon icon-5">( )</span>
+          <span class="float-icon icon-6">=&gt;</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">The Mind Behind <span class="gradient-text">The Code</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-col reveal">
+          <div class="about-image-wrapper">
+            <div class="about-image-placeholder">
+              <div class="image-initials">SO</div>
+              <div class="image-ring ring-outer"></div>
+              <div class="image-ring ring-inner"></div>
+            </div>
+            <div class="about-image-badge">
+              <i class="fas fa-code"></i>
+              <span>Full Stack Dev</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content-col reveal">
+          <h3 class="about-heading">Young African Tech Visionary</h3>
+          <p class="about-bio">
+            I'm <strong>Samuel Owino</strong> — a passionate Full Stack Software Engineer, Data Analyst, Statistician, and Tech Entrepreneur from Africa. I blend cutting-edge technology with data-driven insights to build solutions that matter. My journey started with a deep curiosity for how systems work and evolved into a mission to shape Africa's digital landscape through innovation, code, and entrepreneurship.
+          </p>
+          <p class="about-bio">
+            From building scalable web applications to deriving actionable insights from complex datasets, I thrive at the intersection of technology and impact. As the Founder of <strong>Luminary Labs</strong>, I'm on a mission to create the continent's most transformative tech ecosystem.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Problem Solver</span>
+            <span class="tag">Innovator</span>
+            <span class="tag">Data Enthusiast</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Tech Entrepreneur</span>
+            <span class="tag">Africa-focused</span>
+            <span class="tag">Remote-ready</span>
+            <span class="tag">Agile</span>
+          </div>
+          <a href="#" class="btn btn-primary mt-20">
+            <i class="fas fa-file-download"></i> Download CV
+          </a>
+        </div>
+      </div>
+      <div class="stats-grid reveal">
+        <div class="stat-card glass">
+          <div class="stat-icon"><i class="fas fa-clock"></i></div>
+          <div class="stat-number" data-target="3">0</div>
+          <div class="stat-suffix">+ Years</div>
+          <div class="stat-label">Experience</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="stat-number" data-target="15">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-icon"><i class="fas fa-microchip"></i></div>
+          <div class="stat-number" data-target="19">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+          <div class="stat-number" data-target="2">0</div>
+          <div class="stat-suffix"></div>
+          <div class="stat-label">Startups Founded</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Skills Section -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Technical Arsenal</span>
+        <h2 class="section-title">Skills &amp; <span class="gradient-text">Expertise</span></h2>
+        <p class="section-desc">A comprehensive stack spanning frontend, backend, data science, and beyond.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card glass reveal" data-skill="95">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <div class="skill-name">HTML5</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="95"/>
+            </svg>
+            <span class="skill-percent">95%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="90">
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <div class="skill-name">CSS3</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="90"/>
+            </svg>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="92">
+          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="92"/>
+            </svg>
+            <span class="skill-percent">92%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="85">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <div class="skill-name">TypeScript</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="85"/>
+            </svg>
+            <span class="skill-percent">85%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="90">
+          <div class="skill-icon"><i class="fab fa-react"></i></div>
+          <div class="skill-name">ReactJS</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="90"/>
+            </svg>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="88">
+          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="skill-name">Next.js</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="88"/>
+            </svg>
+            <span class="skill-percent">88%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="92">
+          <div class="skill-icon"><i class="fas fa-wind"></i></div>
+          <div class="skill-name">Tailwind CSS</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="92"/>
+            </svg>
+            <span class="skill-percent">92%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="85">
+          <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="85"/>
+            </svg>
+            <span class="skill-percent">85%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="88">
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <div class="skill-name">Python</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="88"/>
+            </svg>
+            <span class="skill-percent">88%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="82">
+          <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="skill-name">R Programming</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="82"/>
+            </svg>
+            <span class="skill-percent">82%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="80">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <div class="skill-name">MySQL</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="80"/>
+            </svg>
+            <span class="skill-percent">80%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="78">
+          <div class="skill-icon"><i class="fas fa-server"></i></div>
+          <div class="skill-name">PostgreSQL</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="78"/>
+            </svg>
+            <span class="skill-percent">78%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="90">
+          <div class="skill-icon"><i class="fas fa-table"></i></div>
+          <div class="skill-name">Excel</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="90"/>
+            </svg>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="85">
+          <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+          <div class="skill-name">Data Visualization</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="85"/>
+            </svg>
+            <span class="skill-percent">85%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="75">
+          <div class="skill-icon"><i class="fas fa-brain"></i></div>
+          <div class="skill-name">Machine Learning</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="75"/>
+            </svg>
+            <span class="skill-percent">75%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="92">
+          <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+          <div class="skill-name">Git/GitHub</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="92"/>
+            </svg>
+            <span class="skill-percent">92%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="87">
+          <div class="skill-icon"><i class="fas fa-plug"></i></div>
+          <div class="skill-name">API Development</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="87"/>
+            </svg>
+            <span class="skill-percent">87%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="83">
+          <div class="skill-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <div class="skill-name">UI/UX Design</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="83"/>
+            </svg>
+            <span class="skill-percent">83%</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal" data-skill="88">
+          <div class="skill-icon"><i class="fas fa-square-root-alt"></i></div>
+          <div class="skill-name">Statistical Analysis</div>
+          <div class="skill-progress-ring">
+            <svg viewBox="0 0 80 80">
+              <circle class="progress-bg" cx="40" cy="40" r="32"/>
+              <circle class="progress-fill" cx="40" cy="40" r="32" data-percent="88"/>
+            </svg>
+            <span class="skill-percent">88%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects Section -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Digital <span class="gradient-text">Creations</span></h2>
+        <p class="section-desc">Real-world solutions engineered with precision and passion.</p>
+      </div>
+      <div class="project-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Apps</button>
+        <button class="filter-btn" data-filter="data">Data</button>
+        <button class="filter-btn" data-filter="business">Business</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card glass reveal tilt-card" data-category="web business">
+          <div class="project-header" style="background: linear-gradient(135deg, #00D4FF22, #8B5CF622);">
+            <div class="project-header-icon"><i class="fas fa-rocket"></i></div>
+            <div class="project-status live">Live</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Luminary Labs</h3>
+            <p class="project-desc">A futuristic innovation and technology ecosystem empowering Africa's next generation of builders.</p>
+            <div class="project-tags">
+              <span class="ptag">React</span>
+              <span class="ptag">Node.js</span>
+              <span class="ptag">AI</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="#" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card glass reveal tilt-card" data-category="web business">
+          <div class="project-header" style="background: linear-gradient(135deg, #06FFA522, #00D4FF22);">
+            <div class="project-header-icon"><i class="fas fa-hospital"></i></div>
+            <div class="project-status live">Live</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">St. Jairus Community Hospital</h3>
+            <p class="project-desc">Professional healthcare management platform streamlining patient records, appointments, and billing.</p>
+            <div class="project-tags">
+              <span class="ptag">Next.js</span>
+              <span class="ptag">MySQL</span>
+              <span class="ptag">TypeScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="#" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card glass reveal tilt-card" data-category="web business">
+          <div class="project-header" style="background: linear-gradient(135deg, #FFD70022, #FF6B6B22);">
+            <div class="project-header-icon"><i class="fas fa-store"></i></div>
+            <div class="project-status live">Live</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Jackie Peanuts</h3>
+            <p class="project-desc">Modern digital brand platform for a premium peanut business with e-commerce and branding showcase.</p>
+            <div class="project-tags">
+              <span class="ptag">React</span>
+              <span class="ptag">E-commerce</span>
+              <span class="ptag">UI/UX</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="#" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card glass reveal tilt-card" data-category="data">
+          <div class="project-header" style="background: linear-gradient(135deg, #8B5CF622, #06FFA522);">
+            <div class="project-header-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="project-status live">Live</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI Analytics Dashboard</h3>
+            <p class="project-desc">Real-time data insights platform with ML-powered predictions, interactive charts, and automated reporting.</p>
+            <div class="project-tags">
+              <span class="ptag">Python</span>
+              <span class="ptag">D3.js</span>
+              <span class="ptag">ML</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="plink plink-live"><i class="fas fa-external-link-alt"></i> Live Preview</a>
+              <a href="#" class="plink plink-github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card glass reveal tilt-card coming-soon-card" data-category="web business">
+          <div class="project-header" style="background: linear-gradient(135deg, #00D4FF11, #FFD70011);">
+            <div class="project-header-icon"><i class="fas fa-credit-card"></i></div>
+            <div class="project-status soon">Coming Soon</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">FinTech SaaS Platform</h3>
+            <p class="project-desc">Next-generation financial technology platform enabling seamless payments, lending, and financial analytics.</p>
+            <div class="project-tags">
+              <span class="ptag">Next.js</span>
+              <span class="ptag">PostgreSQL</span>
+              <span class="ptag">Stripe</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="plink plink-disabled"><i class="fas fa-lock"></i> In Development</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card glass reveal tilt-card coming-soon-card" data-category="data">
+          <div class="project-header" style="background: linear-gradient(135deg, #06FFA511, #8B5CF611);">
+            <div class="project-header-icon"><i class="fas fa-cogs"></i></div>
+            <div class="project-status soon">Coming Soon</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Smart Data Pipeline</h3>
+            <p class="project-desc">Automated ETL pipeline for large-scale data processing, transformation, and visualization with R and Python.</p>
+            <div class="project-tags">
+              <span class="ptag">Python</span>
+              <span class="ptag">R</span>
+              <span class="ptag">Automation</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="plink plink-disabled"><i class="fas fa-lock"></i> In Development</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Data & Statistics Section -->
+  <section class="data-section section" id="data">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Analytics</span>
+        <h2 class="section-title">Data Speaks <span class="gradient-text">Volumes</span></h2>
+        <p class="section-desc">Turning raw data into powerful, actionable insights.</p>
+      </div>
+      <div class="data-grid">
+        <div class="data-chart-panel glass reveal">
+          <h3 class="panel-title"><i class="fas fa-chart-bar"></i> Skill Proficiency Overview</h3>
+          <div class="bar-chart">
+            <div class="bar-item">
+              <span class="bar-label">Frontend Dev</span>
+              <div class="bar-track"><div class="bar-fill" data-width="92" style="background: linear-gradient(90deg, #00D4FF, #8B5CF6)"></div></div>
+              <span class="bar-value">92%</span>
+            </div>
+            <div class="bar-item">
+              <span class="bar-label">Backend Dev</span>
+              <div class="bar-track"><div class="bar-fill" data-width="85" style="background: linear-gradient(90deg, #8B5CF6, #06FFA5)"></div></div>
+              <span class="bar-value">85%</span>
+            </div>
+            <div class="bar-item">
+              <span class="bar-label">Data Analysis</span>
+              <div class="bar-track"><div class="bar-fill" data-width="88" style="background: linear-gradient(90deg, #06FFA5, #FFD700)"></div></div>
+              <span class="bar-value">88%</span>
+            </div>
+            <div class="bar-item">
+              <span class="bar-label">Machine Learning</span>
+              <div class="bar-track"><div class="bar-fill" data-width="75" style="background: linear-gradient(90deg, #FFD700, #FF6B6B)"></div></div>
+              <span class="bar-value">75%</span>
+            </div>
+            <div class="bar-item">
+              <span class="bar-label">UI/UX Design</span>
+              <div class="bar-track"><div class="bar-fill" data-width="83" style="background: linear-gradient(90deg, #FF6B6B, #00D4FF)"></div></div>
+              <span class="bar-value">83%</span>
+            </div>
+            <div class="bar-item">
+              <span class="bar-label">Statistics</span>
+              <div class="bar-track"><div class="bar-fill" data-width="88" style="background: linear-gradient(90deg, #00D4FF, #06FFA5)"></div></div>
+              <span class="bar-value">88%</span>
+            </div>
+          </div>
+        </div>
+        <div class="data-metrics-panel reveal">
+          <div class="metric-card glass">
+            <div class="metric-icon" style="color: #00D4FF"><i class="fas fa-database"></i></div>
+            <div class="metric-number" data-target="500">0</div>
+            <div class="metric-suffix">K+</div>
+            <div class="metric-label">Data Points Analyzed</div>
+          </div>
+          <div class="metric-card glass">
+            <div class="metric-icon" style="color: #06FFA5"><i class="fas fa-chart-line"></i></div>
+            <div class="metric-number" data-target="30">0</div>
+            <div class="metric-suffix">+</div>
+            <div class="metric-label">Reports Generated</div>
+          </div>
+          <div class="metric-card glass">
+            <div class="metric-icon" style="color: #8B5CF6"><i class="fas fa-project-diagram"></i></div>
+            <div class="metric-number" data-target="10">0</div>
+            <div class="metric-suffix">+</div>
+            <div class="metric-label">ML Models Built</div>
+          </div>
+          <div class="metric-card glass">
+            <div class="metric-icon" style="color: #FFD700"><i class="fas fa-award"></i></div>
+            <div class="metric-number" data-target="98">0</div>
+            <div class="metric-suffix">%</div>
+            <div class="metric-label">Client Satisfaction</div>
+          </div>
+        </div>
+        <div class="data-tools-panel glass reveal">
+          <h3 class="panel-title"><i class="fas fa-tools"></i> Tools &amp; Technologies</h3>
+          <div class="tools-badges">
+            <span class="tool-badge" style="--c:#F7DF1E">JavaScript</span>
+            <span class="tool-badge" style="--c:#3776AB">Python</span>
+            <span class="tool-badge" style="--c:#276DC3">R Studio</span>
+            <span class="tool-badge" style="--c:#61DAFB">React</span>
+            <span class="tool-badge" style="--c:#000000">Next.js</span>
+            <span class="tool-badge" style="--c:#339933">Node.js</span>
+            <span class="tool-badge" style="--c:#4479A1">MySQL</span>
+            <span class="tool-badge" style="--c:#336791">PostgreSQL</span>
+            <span class="tool-badge" style="--c:#217346">Excel</span>
+            <span class="tool-badge" style="--c:#F80000">Tableau</span>
+            <span class="tool-badge" style="--c:#F2C811">Power BI</span>
+            <span class="tool-badge" style="--c:#F05032">Git</span>
+            <span class="tool-badge" style="--c:#2496ED">Docker</span>
+            <span class="tool-badge" style="--c:#FF9900">AWS</span>
+            <span class="tool-badge" style="--c:#06B6D4">Tailwind</span>
+          </div>
+        </div>
+        <div class="data-workflow-panel glass reveal">
+          <h3 class="panel-title"><i class="fas fa-sitemap"></i> Data Analytics Workflow</h3>
+          <div class="workflow-steps">
+            <div class="workflow-step">
+              <div class="wf-icon"><i class="fas fa-search"></i></div>
+              <div class="wf-content">
+                <div class="wf-title">Data Collection</div>
+                <div class="wf-desc">APIs, Scraping, Surveys</div>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="workflow-step">
+              <div class="wf-icon"><i class="fas fa-broom"></i></div>
+              <div class="wf-content">
+                <div class="wf-title">Cleaning &amp; EDA</div>
+                <div class="wf-desc">Python, R, Pandas</div>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="workflow-step">
+              <div class="wf-icon"><i class="fas fa-brain"></i></div>
+              <div class="wf-content">
+                <div class="wf-title">Modeling</div>
+                <div class="wf-desc">ML, Scikit-learn</div>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="workflow-step">
+              <div class="wf-icon"><i class="fas fa-chart-pie"></i></div>
+              <div class="wf-content">
+                <div class="wf-title">Visualization</div>
+                <div class="wf-desc">D3.js, Tableau, ggplot</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Journey</span>
+        <h2 class="section-title">Experience &amp; <span class="gradient-text">Timeline</span></h2>
+        <p class="section-desc">The milestones that shaped a tech visionary.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-node"></div>
+          <div class="timeline-card glass">
+            <div class="tl-period">2024 – Present</div>
+            <h3 class="tl-title">Founder &amp; Lead Developer</h3>
+            <h4 class="tl-company"><i class="fas fa-rocket"></i> Luminary Labs</h4>
+            <p class="tl-desc">Founded and lead a futuristic technology ecosystem focused on empowering African developers, startups, and innovators through cutting-edge software and collaborative programs.</p>
+            <div class="tl-tags">
+              <span>React</span><span>Node.js</span><span>AI/ML</span><span>Leadership</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-node"></div>
+          <div class="timeline-card glass">
+            <div class="tl-period">2023 – Present</div>
+            <h3 class="tl-title">Full Stack Developer</h3>
+            <h4 class="tl-company"><i class="fas fa-laptop-code"></i> Freelance</h4>
+            <p class="tl-desc">Delivering high-quality web applications and digital solutions for clients across Africa and beyond. Specialized in React, Next.js, and Node.js-powered platforms.</p>
+            <div class="tl-tags">
+              <span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>APIs</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-node"></div>
+          <div class="timeline-card glass">
+            <div class="tl-period">2023</div>
+            <h3 class="tl-title">Data Analyst Intern</h3>
+            <h4 class="tl-company"><i class="fas fa-chart-line"></i> Statistical Research Institute</h4>
+            <p class="tl-desc">Conducted in-depth statistical research, data cleaning, and visualization projects. Built analytical reports that influenced organizational data strategy.</p>
+            <div class="tl-tags">
+              <span>Python</span><span>R</span><span>Excel</span><span>SPSS</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-node"></div>
+          <div class="timeline-card glass">
+            <div class="tl-period">2022</div>
+            <h3 class="tl-title">Started Full Stack Journey</h3>
+            <h4 class="tl-company"><i class="fas fa-graduation-cap"></i> Self-Taught Developer</h4>
+            <p class="tl-desc">Embarked on an intensive self-taught journey into full stack development. Mastered HTML, CSS, JavaScript, and React through hundreds of hours of focused learning.</p>
+            <div class="tl-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-node"></div>
+          <div class="timeline-card glass">
+            <div class="tl-period">2021</div>
+            <h3 class="tl-title">B.Sc. Statistics</h3>
+            <h4 class="tl-company"><i class="fas fa-university"></i> University</h4>
+            <p class="tl-desc">Completed a Bachelor of Science in Statistics with strong foundations in probability theory, inferential statistics, regression analysis, and research methodology.</p>
+            <div class="tl-tags">
+              <span>Statistics</span><span>Mathematics</span><span>Research</span><span>R</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials Section -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What People <span class="gradient-text">Say</span></h2>
+      </div>
+      <div class="carousel-wrapper reveal">
+        <div class="carousel" id="testimonialCarousel">
+          <div class="testimonial-card glass active">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">"Samuel is one of the most talented young developers I've mentored. His ability to grasp complex concepts and apply them to real-world problems is extraordinary. He's destined for greatness in the tech industry."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><span>TM</span></div>
+              <div class="author-info">
+                <div class="author-name">Tech Mentor</div>
+                <div class="author-role">Senior Software Engineer, Silicon Valley</div>
+              </div>
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">"Working with Samuel was a game-changer for our business. He built us a stunning platform that tripled our online presence. His attention to detail and communication throughout the project were outstanding."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><span>CL</span></div>
+              <div class="author-info">
+                <div class="author-name">Client</div>
+                <div class="author-role">CEO, Nairobi Startup</div>
+              </div>
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">"Samuel brings both technical brilliance and creative vision to every project. Collaborating with him on the analytics dashboard was a joy — his code is clean, efficient, and always ahead of schedule."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><span>CO</span></div>
+              <div class="author-info">
+                <div class="author-name">Colleague</div>
+                <div class="author-role">Data Scientist, Tech Company</div>
+              </div>
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">"In my 20+ years of teaching, Samuel stands out as one of the most analytically gifted students I've taught. His final thesis on predictive modeling was publication-quality. A true scholar and innovator."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><span>PR</span></div>
+              <div class="author-info">
+                <div class="author-name">Professor</div>
+                <div class="author-role">Statistics Department, University</div>
+              </div>
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-dots" id="carouselDots">
+            <span class="dot active" data-idx="0"></span>
+            <span class="dot" data-idx="1"></span>
+            <span class="dot" data-idx="2"></span>
+            <span class="dot" data-idx="3"></span>
+          </div>
+          <button class="carousel-btn next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Build The Future <span class="gradient-text">Together</span></h2>
+        <p class="section-desc">Have a project in mind? Let's collaborate and create something extraordinary.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card glass">
+            <div class="contact-icon" style="color: #00D4FF"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <div class="contact-label">Email</div>
+              <a href="mailto:samuel@luminrylabs.com" class="contact-value">samuel@luminarylabs.com</a>
+            </div>
+          </div>
+          <div class="contact-card glass">
+            <div class="contact-icon" style="color: #06FFA5"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-details">
+              <div class="contact-label">WhatsApp</div>
+              <a href="https://wa.me/254700000000" class="contact-value">+254 700 000 000</a>
+            </div>
+          </div>
+          <div class="contact-card glass">
+            <div class="contact-icon" style="color: #FFD700"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-details">
+              <div class="contact-label">Location</div>
+              <span class="contact-value">Nairobi, Kenya 🇰🇪</span>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/254700000000" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal">
+          <form class="contact-form glass" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" placeholder="Project Inquiry" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-send" id="sendBtn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+              <span class="btn-success" style="display:none"><i class="fas fa-check"></i> Message Sent!</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-gradient-divider"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">SO</div>
+          <p class="footer-tagline">Code the future. Build the impossible.</p>
+          <div class="footer-socials">
+            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:samuel@luminarylabs.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/254700000000" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <ul>
+            <li><a href="#data">Data</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#projects">Web Development</a></li>
+            <li><a href="#data">Data Analytics</a></li>
+            <li><a href="#skills">UI/UX Design</a></li>
+            <li><a href="#contact">Consulting</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-quote">"Code the future. Build the impossible."</p>
+        <p class="footer-copy">&copy; 2025 Samuel Owino. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
